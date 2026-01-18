@@ -1,5 +1,5 @@
 // 首頁影片輪播邏輯
-const videoList = ['images/video/snow1.mp4', 'images/video/snow2.mp4', 'images/video/snow3.mp4'];
+const videoList = ['./images/video/snow1.mp4', './images/video/snow2.mp4', './images/video/snow3.mp4'];
 let currentIdx = 0;
 const v1 = document.getElementById('video-1');
 const v2 = document.getElementById('video-2');
