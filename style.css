@@ -45,6 +45,21 @@ body {
     z-index: 2;
 }
 
+/* 隱藏 Safari 和 Chrome 的影片控制列、播放鈕 */
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+}
+
+/* 確保影片背景是黑色的，這樣在載入瞬間不會有白閃 */
+#hero-video-section {
+    background-color: #000;
+}
+
 .hero-content {
     position: relative;
     z-index: 3;
