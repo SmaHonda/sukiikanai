@@ -1,0 +1,70 @@
+   /* 基礎按鈕樣式 */
+        .btn-toggle {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            color: #475569;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        /* 滑鼠懸停 */
+        .btn-toggle:hover {
+            background-color: #f8fafc;
+        }
+
+        /* 啟動狀態（被選中） */
+        .active-btn {
+            border-color: #2563eb !important;
+            background-color: #eff6ff !important;
+            color: #1d4ed8 !important;
+            box-shadow: 0 0 0 2px #dbeafe;
+        }
+
+        /* 禁用狀態（全套鎖定） */
+        .disabled-btn {
+            opacity: 0.5;
+            background-color: #f1f5f9 !important;
+            cursor: not-allowed;
+            border-color: #cbd5e1 !important;
+            color: #94a3b8 !important;
+        }
+        /* 修正卡片容器，確保卡片不會被拉伸到奇怪的高度 */
+        #card-container {
+            align-items: start;
+        }
+        
+        /* 單字資料 */
+        .word-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.word-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.word-card:hover {
+    transform: translateY(-5px);
+}
+
+.tag {
+    font-size: 0.7em;
+    background: #e1f5fe;
+    color: #01579b;
+    padding: 2px 8px;
+    border-radius: 10px;
+}

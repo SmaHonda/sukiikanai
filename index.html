@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>どこ滑る？</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body class="bg-slate-50 p-6">
+    <div id="nav-placeholder"></div>
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold text-slate-800">⛷️ 最強スキー計画クン</h1>
+            <p id="status" class="text-blue-500 mt-2 font-medium hidden"> </p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+            <div class="lg:col-span-1 bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h3 class="font-bold text-lg mb-4 border-b pb-2">滑雪方案</h3>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">滑雪天數</label>
+                        <div class="grid grid-cols-4 gap-2" id="days-group">
+                            <button onclick="setVal('days', 1, this)" class="btn-toggle active-btn">1天</button>
+                            <button onclick="setVal('days', 2, this)" class="btn-toggle">2天</button>
+                            <button onclick="setVal('days', 3, this)" class="btn-toggle">3天</button>
+                            <button onclick="setVal('days', 4, this)" class="btn-toggle">4天</button>
+                        </div>
+                        <input type="hidden" id="days" value="1">
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-slate-700 mb-2">每日雪票選擇</label>
+                        <div id="ticket-selectors-container" class="space-y-3">
+                            </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">裝備租借 (板+靴)</label>
+                        <div class="flex flex-col gap-2" id="hardware-group">
+                            <button onclick="setHardware('none', this)" class="btn-toggle active-btn text-left">不租借</button>
+                            <button onclick="setHardware('full', this)" class="btn-toggle text-left">全套 (板+靴+衣+褲)</button>
+                            <button onclick="setHardware('ski_set', this)" class="btn-toggle text-left">Ski 套裝 (板+靴)</button>
+                            <button onclick="setHardware('ski_pole', this)" class="btn-toggle text-left">Ski 三件組 (板+靴+杖)</button>
+                            <button onclick="setHardware('board_set', this)" class="btn-toggle text-left">Snowboard 套裝</button>
+                        </div>
+                        <input type="hidden" id="hardwareRental" value="none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">加租雪衣雪褲</label>
+                        <div class="grid grid-cols-2 gap-2" id="wear-group">
+                            <button id="wear-no" onclick="setWear('no', this)" class="btn-toggle active-btn">否</button>
+                            <button id="wear-yes" onclick="setWear('yes', this)" class="btn-toggle">是</button>
+                        </div>
+                        <input type="hidden" id="wearRental" value="no">
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6" id="card-container">
+                </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="script_nav.js"></script>
+</body>
+</html>
